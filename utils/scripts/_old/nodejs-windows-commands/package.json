@@ -1,0 +1,17 @@
+{
+  "name": "nodejs-windows-commands",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "nvm use 22.12.0 && node server.js",
+    "ngrok": "ngrok http 3000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ws": "^8.21.1"
+  }
+}

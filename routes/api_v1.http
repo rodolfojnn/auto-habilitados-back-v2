@@ -1,0 +1,51 @@
+@endpoint = http://localhost/blc/blc-backend/public/v1
+# @endpoint = https://blc-backend.vercel.app/v1
+
+### JWT
+// @name token
+POST {{endpoint}}/user/login
+Content-Type: application/json
+Accept: application/json
+
+{
+    "email": "rodolfojnnogueira@gmail.com",
+    "password": "8*wXKsahd08N%!Mj"
+}
+
+### getPontos
+POST {{endpoint}}/wp_users/getPontos
+Content-Type: application/json
+Accept: application/json
+Authorization: {{token.response.body.data.jwt}}"
+
+
+###
+curl 'http://localhost/lovato/lovato-clube-api/public/v1/pontoMov/resgate' \
+  -H 'authority: lovato-clube-api.vercel.app' \
+  -H 'accept: application/json' \
+  -H 'accept-language: pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,it;q=0.6' \
+  -H 'authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNSwiaXNzIjoibG92YXRvLWNsdWJlLWFwaSIsImlhdCI6MTY5MDM3MDI1Mn0.OhM_k1DwIbcUXNS-fcEr6fpQPIosR7005h4Uk5OIO5w' \
+  -H 'content-type: application/json' \
+  -H 'origin: https://clubelovato.lovatomoveis.com' \
+  -H 'referer: https://clubelovato.lovatomoveis.com/' \
+  -H 'sec-ch-ua: "Not/A)Brand";v="99", "Google Chrome";v="115", "Chromium";v="115"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: cross-site' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36' \
+  --data-raw '{"cart":{"item":{"id":23612,"name":"Organizador Buoy","price":500,"description":"Arrebol é o efeito causado pelo reflexo da luz do sol no nascente e no poente, definição que é trazida na mistura de materiais proposta nas peças.","image":["https://clubelovato.lovatomoveis.com/wp-content/uploads/2023/07/2acbae_a42b8ee85d9a43a493800ac70eabfbc3mv2.webp",665,499,false]}},"frete":20,"fretes":[{"zone":"PR","cost":"20"},{"zone":"SP","cost":"50"}]}' \
+  --compressed
+
+###
+curl 'http://localhost/lovato/lovato-clube-api/public/v1/pontoMov/adicionar' \
+  -H 'accept: application/json' \
+  -H 'accept-language: pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,it;q=0.6' \
+  -H 'authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNSwiaXNzIjoibG92YXRvLWNsdWJlLWFwaSIsImlhdCI6MTY5MTIzOTUwNH0.Jk3LREGBLbh67G8pVANUpNUPIQxJio2VvJnE_GWCoFs' \
+  -H 'content-type: application/json' \
+  --data-raw '{"pontoMov":{"gerente_id":"1","vendedor_id":"4","ngerente":true,"nvendedor":true,"chassis":"12345,23456"}}' \
+  --compressed
+
+###
+curl --location --request GET 'https://americas.api.riotgames.com/riot/account/v1/accounts/me' --header 'Authorization: Bearer eyJ6aXAiOiJERUYiLCJraWQiOiJlMSIsImN0eSI6IkpXVCIsImVuYyI6IkExMjhHQ00iLCJhbGciOiJkaXIifQ..ek5QB7JEkO9OuSaz.QDnkw21btmBGMWMvMNY5y7L9qrzIEYGswe0SwQDyYleKNJ7HqqFvhKpBEAu7IQnv0phnvZNZhyFVSFNdqgWOQtt3-NeXQi7lfR2hVjcfCXmbs3M6FUeuebu_sTtVPb__Miz8cJMugZ7i0bEhZ7PkzNP8qSaG-EyMlCRvsgFlyFfTHj_jfX9F2J4QWHd5oXRDQPOhVFLKUWj6nXcIHG_RdjH5btzI1LF8hEj0EZte-GD6OIm-MuJrnSngMvctiDSqeApWmUJ5UxwTopozuKnTZMnhmlrD_8ISvjz0hScyOCEDJscreTarqhjtYrdonQs4szgAXIkQCY84H-GVA7uOg8Si0w28TuiT5Uccw-W3H04zs9CSLBsD7M8KgmsomWtrmNpNHXvpCQrQfUd60jt9ra-F_2fAmJjCm2iYQ9tSTMp3QmjpdFGxWeir0p6R3NtsY4lZHa1LWpKjb6gjXWKLFbs7V0JtWZ8H8GRL-cn65btB26YbDQ1ajDv3DFe5yoh0rZhcTnExJsfUqXcr5BidOeTRAmp-ZDupriYUNzEebFstLH1GJPrY8K87T4TMuIhSlxPMM8vnCYfJIydLa1n0EvM-j9iLExpm6IcSuqPwFfZMosUpXoZMqPHDfEqNpeY_bEE1a5SuXxg2EIWIFyJP.dVdGmhkWYAC3khov7fv8gw'

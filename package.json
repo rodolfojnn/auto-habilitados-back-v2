@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "server": "node ./utils/scripts/nodejs-windows-commands/server.js"
+  },
+  "devDependencies": {}
+}
